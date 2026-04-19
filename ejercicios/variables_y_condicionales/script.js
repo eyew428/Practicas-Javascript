@@ -88,7 +88,7 @@ console.log("Negativo");
 
 //Ejercicio 8:
 
-Let monto = 100;
+let monto = 100;
 if (monto >= 100) {
     console.log("Descuento del 10%");
 } else if (monto >= 200) {
@@ -97,7 +97,102 @@ if (monto >= 100) {
 
 //Ejercicio 9:
 
-Let lado1; lado2; lado3;
-if (lado1) {
-    console.log("Equilátero");
+let lado1 = 10;
+let lado2 = 10;
+let lado3 = 10;
+if (lado1 === lado2 && lado2 === lado3) {
+    console.log("El triángulo es Equilátero");
+} 
+else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+    console.log("El triángulo es Isósceles");
+} 
+else {
+    console.log("El triángulo es Escaleno");
+}
+
+//Ejercicio 10:
+
+let contraseña = "contraseña123";
+if (contraseña.length >= 8) {
+    console.log("Contraseña válida");
+} else {
+    console.log("Demasiado corta");
+}
+
+
+//Ejercicio 11:
+
+switch (mes) {
+    case Verano:
+        console.log
+        ("Diciembre");("Enero");(Febrero);
+
+    case Otoño:
+        console.log
+        ("Marzo");("Abril");("Mayo");
+
+    case Invierno:
+        console.log
+        ("Junio");("Julio");("Agosto");
+
+    case Primavera:
+        console.log
+        ("Septiembre");("Octubre");("Noviembre");
+}
+
+
+//Ejercicio 12:
+
+let puntos;
+if (puntos <= 50) {
+    console.log("Novato");
+} else if (puntos > 50 && puntos <= 100) {
+    console.log("Intermedio");
+} else if (puntos > 100) {
+    console.log("Experto");
+}
+
+//Ejercicio 13:
+
+let operacion = "+";
+let num3 = 10;
+let num4 = 5;
+
+switch (operacion) {
+    case "+":
+        console.log("Resultado: " + (num3 + num4));
+        break;
+    case "-":
+        console.log("Resultado: " + (num3 - num4));
+        break;
+    case "*":
+        console.log("Resultado: " + (num3 * num4));
+        break;
+    case "/":
+        console.log("Resultado: " + (num3 / num4));
+        break;
+}
+
+//Ejercicio 14:
+
+let email;
+if (email.includes("@") && email.includes(".")) {
+    console.log("válido");
+} else {
+    console.log("inválido");
+}
+
+
+//Ejercicio 15:
+
+switch (opcion) {
+    case 1:
+        console.log("Iniciar");
+        break;
+    case 2:
+        console.log("Configurar");
+        break;
+    case 3:
+        console.log("Salir");
+        break;
 }
