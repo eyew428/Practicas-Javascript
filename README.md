@@ -13,3 +13,4 @@ Ejemplos de javascript aplicado a páginas
 ## Ejercicios
 
 - [Ejercicios variables y condicionales](./ejercicios/variables_y_condicionales/)
+- [Ejercicios bucles y listas](./ejercicios/bucles_y_arrays/)
