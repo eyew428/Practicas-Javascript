@@ -53,4 +53,5 @@ while (multiplicador <= 10) {
     let resultado = numero * multiplicador;
     console.log(`${numero} x ${multiplicador} = ${resultado}`);
     multiplicador++;
+    
 }
