@@ -86,6 +86,17 @@ function encontrarMaximoPar(array) {
 //Ejercicio 9
 
 
+const array = Array.from(variable);
+function contarVocales(array) {
+    let contador = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'a' || array[i] === 'e' || array[i] === 'i' || array[i] === 'o' || array[i] === 'u') {
+            contador++;
+        }
+    }
+    return contador;
+}
+
 //Ejercicio 10
 
 function dobleNumeros(array) {
