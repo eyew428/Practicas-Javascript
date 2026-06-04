@@ -1,9 +1,9 @@
 //Ejercicio 2
 
-const boton2 = document.getElementById('btn') [1];
-const parrafo = document.getElementById('texto');
+const boton2 = document.querySelector('#ejercicio2 #btn');
+const parrafo = document.querySelector('#ejercicio2 #texto');
 
-boton.addEventListener('click', () => {
+boton2.addEventListener('click', () => {
     parrafo.classList.toggle('activo');
 
 });

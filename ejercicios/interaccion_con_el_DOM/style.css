@@ -1,0 +1,9 @@
+.activo {
+    font-size: 20px;
+    color: red;
+}
+
+.completada {
+    text-decoration: line-through;
+    color: blue;
+}

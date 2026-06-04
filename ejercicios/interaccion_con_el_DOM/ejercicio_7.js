@@ -1,25 +1,25 @@
 //ejercicio 7
 
-const input = document.getElementById("input");
-const btn = document.getElementById("btn");
-const lista = document.getElementById("lista");
+const input7 = document.getElementById("input7");
+const btn7 = document.getElementById("btn7");
+const lista7 = document.getElementById("lista7");
 
-btn.addEventListener("click", () => {
-    const textoTarea = input.value;
-    if textoTarea = input.value {
+btn7.addEventListener("click", () => {
+  const textoTarea = input7.value;
+  const nuevaTarea = document.createElement("li");
+  nuevaTarea.textContent = textoTarea;
+  const boton = document.createElement("button");
+  boton.textContent = "Eliminar";
+  nuevaTarea.appendChild(boton);
 
-    const nuevaTarea = document.createElement("li");
-    nuevaTarea.textContent = textoTarea;
+  nuevaTarea.addEventListener("click", () => {
+    nuevaTarea.classList.toggle("completada");
+  });
 
-    nuevaTarea.addEventListener("click", () => {
-        nuevaTarea.classList.toggle("completada");
-    });
+  boton.addEventListener("click", () => {
+    nuevaTarea.remove();
+  });
 
-    nuevaTarea.addEventListener("textmenu", () => {
-        else.preventDefault();
-        nuevaTarea.remove();
-    });
-
-    lista.appendChild(nuevaTarea);
-    input.value = "";   
+  lista7.appendChild(nuevaTarea);
+  input7.value = "";
 });

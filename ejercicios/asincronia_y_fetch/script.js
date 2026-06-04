@@ -5,11 +5,11 @@ async function obtenerPokemon(nombrePokemon) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
         const data = await response.json();
         console.log('Datos de Pikachu:', data);
-    }
 
-     const habilidades = datos.abilities.slice(0, 3); 
+             const habilidades = data.abilities.slice(0, 3); 
     console.log("Habilidades:");
     habilidades.forEach(h => console.log(h.ability.name));
+    }
 
   } catch (error) {
     console.error("Error:", error);
@@ -25,7 +25,7 @@ async function renderizarPokemon(nombrePokemon) {
     try {
         const response = await fetch(`https://pokeapi.co`);
         const data = await response.json();
-        const Lista Pokemon = datos.results;
+        const ListaPokemon = data.results;
         listaPokemon.forEach(pokemon => {
             const li = document.createElement('li');
             li.innerHTML = `<a href= "${pokemon.url}">${pokemon.name}</a>`;

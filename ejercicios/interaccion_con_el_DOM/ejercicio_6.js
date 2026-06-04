@@ -1,8 +1,8 @@
 //ejercicio 6
 
-const input = document.getElementById("input");
+const input6 = document.getElementById("input");
 const preview = document.getElementById("preview");
 
-input.addEventListener("input", function() {
-    preview.innerText = event.target.value;
+input6.addEventListener("input", (event) => {
+  preview.textContent = event.target.value;
 });
