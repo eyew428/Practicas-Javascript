@@ -15,43 +15,41 @@ async function obtenerPokemon(nombrePokemon) {
     console.error("Error:", error);
   }
 }
-obtenerPokemon("pikachu");
+const form = document.getElementById("pokemon-form");
+const input = document.getElementById("input-buscador");
+const button = document.getElementById("buscar");
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); //Previene que se recargue la página al enviar el formulario
+  const nombrePokemon = input.value
+    .trim() //Elimina espacios antes del texto
+    .toLowerCase(); //convierte mayusculas a minusculas
+  const pokemon = obtenerPokemon(nombrePokemon);
+  renderizarPokemon(nombrePokemon);
+});
 
-//ejercicio 2
+const ul = document.getElementById("lista-pokemon");
+const p = document.getElementById("mensaje");
+async function renderizarPokemon() {
+  p.textContent = "Cargando...";
 
-async function renderizarPokemon(nombrePokemon) {
   try {
-    const response = await fetch(`https://pokeapi.co`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
     const data = await response.json();
-    const ListaPokemon = data.results;
-    listaPokemon.forEach((pokemon) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href= "${pokemon.url}">${pokemon.name}</a>`;
-      contenedor.appendChild(li);
-    });
+    setTimeout(() => {
+      p.textContent = "";
+      const ListaPokemon = data.results;
+      ListaPokemon.forEach((pokemon) => {
+        const li = document.createElement("li");
+        li.textContent = pokemon.name;
+        ul.appendChild(li);
+      });
+    }, 2000);
   } catch (error) {
     console.error("Error al cargar la lista:", error);
   }
 }
 
 renderizarPokemon();
-
-//ejercicio 3
-
-setTimeOut(() => {
-  const mensajePantalla = document.getElementById("mensaje");
-  const contenerdor = document.getElementById("lista-pokemon");
-
-  async function gestionPokemonCompleta(nombrePokemon) {
-    try {
-      mensajePantalla.textContent = "Cargando...";
-
-      contenedor.innerHTML = "";
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
-});
 
 //ejercicio 4
 
@@ -73,28 +71,25 @@ fetch("https://url-invalida-ejemplo.com")
 async function obtenerHabilidadPokemon(nombrePokemon) {
   const contenedor = document.getElementById("resultado");
   try {
-    const resPokemon = await fetch(`https://pokeapi.co{nombrePokemon}`);
+    const resPokemon = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`,
+    );
     if (!resPokemon.ok) {
       throw new Error("No se encontró el Pokémon");
-      const datosPokemon = await resPokemon.json();
-
-      const urlHabilidad = datosPokemon.abilities[0].ability.url;
-      const nombreHabilidad = datosPokemon.abilities[0].ability.name;
-
-      const resHabilidad = await fetch(urlHabilidad);
-      if (!resHabilidad.ok) throw new Error("No se pudo obtener la habilidad");
-
-      const datosHabilidad = await resHabilidad.json();
-
-      const resHabilidad = await fetch(urlHabilidad);
-      if (!resHabilidad.ok) throw new Error("No se pudo obtener la habilidad");
-
-      const datosHabilidad = await resHabilidad.json();
     }
+    const datosPokemon = await resPokemon.json();
+
+    const urlHabilidad = datosPokemon.abilities[(0, 3)].ability.url;
+    const nombreHabilidad = datosPokemon.abilities[(0, 3)].ability.name;
+
+    const resHabilidad = await fetch(urlHabilidad);
+    if (!resHabilidad.ok) throw new Error("No se pudo obtener la habilidad");
+
+    const datosHabilidad = await resHabilidad.json();
   } catch (error) {
     contenedor.textContent = error.message;
     console.error("Error:", error);
   }
 }
 
-obtenerHabilidadPokemon("pikachu");
+//obtenerHabilidadPokemon("");
